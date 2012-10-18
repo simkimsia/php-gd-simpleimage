@@ -1,3 +1,9 @@
+*.tmproj
+.DS_Store
+*.DS_Store
+*.sublime-project
+*.sublime-workspace
+tags
 tmp/*
 config/database.php
 app/tmp/*
