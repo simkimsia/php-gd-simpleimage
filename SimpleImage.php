@@ -32,6 +32,10 @@ class SimpleImage {
 		return $this->sourceImageWidth;
 	}
 
+	public function getSourceGdImage() {
+		return $this->sourceGdImage;
+	}
+
 	public function loadSourceIntoGD() {
 		switch ($this->sourceImageType) {
 	        case IMAGETYPE_GIF:
@@ -61,8 +65,6 @@ class SimpleImage {
 
 		imagedestroy($product);
 		imagedestroy($source);
-
-		imagedestroy($this->sourceGdImage);
 
 		return new SimpleImage($path);
 		
@@ -105,7 +107,6 @@ class SimpleImage {
     	// create the image file from the gd 
     	imagejpeg($thumbnail_gd_image, $thumbnail_image_path, 90);
 
-    	imagedestroy($this->sourceGdImage);
     	imagedestroy($thumbnail_gd_image);
     	return true;
 	}
@@ -144,9 +145,8 @@ class SimpleImage {
 		imagedestroy($source);
 		imagedestroy($right);
 
-		imagedestroy($this->sourceGdImage);
-		imagedestroy($otherImage->sourceGdImage);
-
+		unset($otherImage);
+		
 		return true;
 	}
 
@@ -168,8 +168,7 @@ class SimpleImage {
 		imagedestroy($source);
 		imagedestroy($down);
 
-		imagedestroy($this->sourceGdImage);
-		imagedestroy($otherImage->sourceGdImage);
+		unset($otherImage);
 
 		return true;
 	}	
