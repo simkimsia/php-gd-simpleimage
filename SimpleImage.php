@@ -20,8 +20,6 @@ class SimpleImage {
 	public function __construct($source_image_path) {
 		$this->sourcePath = $source_image_path;
 		list($this->sourceImageWidth, $this->sourceImageHeight, $this->sourceImageType) = getimagesize($source_image_path);
-	    
-	    
 	}
 
 	public function getHeight() {
@@ -51,9 +49,6 @@ class SimpleImage {
 	    return $this->sourceGdImage;
 	}
 
-
-
-	
 	public function makeCopy($path) {
 		$source = $this->loadSourceIntoGD();
 
