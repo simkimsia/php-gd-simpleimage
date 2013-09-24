@@ -1,0 +1,17 @@
+{
+    "name": "simkimsia/php-gd-simpleimage",
+    "description": "A useful class for manipulating images using php gd.",
+    "keywords": ["php", "gd", "image"],
+    "homepage": "http://github.com/simkimsia/php-gd-simpleimage",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kim Stacks",
+            "email": "kim@stacktogether.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+    }
+}
