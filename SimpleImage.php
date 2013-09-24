@@ -5,8 +5,8 @@ define('THUMBNAIL_IMAGE_MAX_HEIGHT', 85);
 
 class SimpleImage {
 
-	private $thumbnailMaxWidth = 58;
-	private $thumbnailMaxHeight = 85;
+	public $thumbnailMaxWidth = 58;
+	public $thumbnailMaxHeight = 85;
 
 	private $sourceGdImage = null;
 	private $sourcePath = '';
@@ -150,7 +150,7 @@ class SimpleImage {
 		// create the image file from the gd 
 		imagejpeg($background, $thumbnail_image_path, 90);
 
-		imagedestroy($thumbnail_gd_image);
+		imagedestroy($background);
 		return true;
 	}
 
